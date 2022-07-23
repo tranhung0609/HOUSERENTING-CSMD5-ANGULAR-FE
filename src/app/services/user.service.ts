@@ -38,6 +38,10 @@ export class UserService {
     return this.http.put<User>(API_URL + `/users/${id}`, user);
   }
 
+  updatePassword(username: string, user: User): Observable<User> {
+    return this.http.put<User>(API_URL + `/users/${username}/new-password-username`, user);
+  }
+
   logout() {
     localStorage.removeItem('token');
   }

@@ -11,12 +11,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
+import { HomeComponent } from './components/users/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import {AngularFireModule} from "@angular/fire/compat";
     FormsModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    // AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     HttpClientModule
   ],
   providers: [],
