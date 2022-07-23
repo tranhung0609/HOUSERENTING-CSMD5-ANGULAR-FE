@@ -11,12 +11,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
+import { CategoryListComponent } from './components/category/category-list/category-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CategoryListComponent
   ],
   imports: [
     BrowserModule,
