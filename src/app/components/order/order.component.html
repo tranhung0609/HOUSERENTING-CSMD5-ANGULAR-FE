@@ -1,0 +1,27 @@
+
+<a routerLink="">Danh sach order</a>
+<table border="1px">
+  <tr>
+    <td>STT</td>
+    <td>House</td>
+    <td>Customer</td>
+    <td>Start-Time</td>
+    <td>End-Time</td>
+    <td>Total</td>
+    <td>Status</td>
+  </tr>
+  <tr *ngFor="let o of orders; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{o.house}}</td>
+    <td>{{o.customer}}</td>
+    <td>{{o.startTime}}</td>
+    <td>{{o.endTime}}</td>
+    <td>{{o.total}}</td>
+    <td>{{o.status}}</td>
+
+    <!--    <td><a [routerLink]="['edit',clazz.id]">Edit</a></td>-->
+    <!--    <td><button (click)="delete(clazz.id)">Delete</button></td>-->
+  </tr>
+</table>
+
+
