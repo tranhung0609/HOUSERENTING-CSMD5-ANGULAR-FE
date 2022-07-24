@@ -1,0 +1,34 @@
+<header *ngIf="!isLogin">
+  <div class="nav container">
+    <!--    logo-->
+    <a href="../../../../index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
+
+    <input type="checkbox" name="" id="menu">
+    <label for="menu"><i class="bx bx-menu" id="menu-icon"></i></label>
+    <ul class="navbar">
+      <li><a href=""></a>Home</li>
+      <li><a href=""></a>About</li>
+      <li><a href=""></a>Sale</li>
+      <li><a href=""></a>Properties</li>
+    </ul>
+    <!--    login button-->
+    <a href="" class="btn">Log In</a>
+  </div>
+</header>
+<header *ngIf="isLogin">
+  <div class="nav container">
+    <!--    logo-->
+    <a href="../../../../index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
+
+    <input type="checkbox" name="" id="menu">
+    <label for="menu"><i class="bx bx-menu" id="menu-icon"></i></label>
+    <ul class="navbar">
+      <li><a href=""></a>Home</li>
+      <li><a href=""></a>About</li>
+      <li><a href=""></a>Sale</li>
+      <li><a href=""></a>Properties</li>
+    </ul>
+    <!--    login button-->
+    <a href="" class="btn" (click)="logOut()">Log Out</a>
+  </div>
+</header>
