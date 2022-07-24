@@ -1,1 +1,58 @@
-<p>register works!</p>
+<div class="login container">
+  <div class="login-container">
+    <h2>Welcome, Let's get started</h2>
+    <p>Already have account <a href="">Log In</a></p>
+    <!--    LoginForm-->
+    <form action="" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <span>Full Name</span>
+      <input type="text" name="" id="name" placeholder="Your Name" formControlName="username" required>
+      <span>Phone</span>
+      <input type="tel" name="" id="phone" placeholder="Enter your number" formControlName="phone" required>
+      <span>Enter your password</span>
+      <input type="password" name="" id="password" placeholder="Password" formControlName="password" required>
+      <span>ConfirmPassword</span>
+      <input type="password" name="" id="confirmPassword" placeholder="At least 8" formControlName="confirmPassword" required>
+      <input type="submit" value="Sign Up" class="buttom">
+      <a routerLink="/login">Already have account</a>
+    </form>
+    <!--    Gắn đường link để chuyển đến trang LogIn-->
+    <a routerLink="/login" class="btn">Log In</a>
+  </div>
+
+  <!--  log in image-->
+  <div class="login-image">
+    <img src="../../../assets/image/123547528_196604325311788_5603777918053312513_n.jpg" alt="">
+  </div>
+</div>
+<!--Footer-->
+<section class="footer">
+  <div class="footer-container container">
+    <h2>R.State</h2>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+    </div>
+    <div class="footer-box">
+      <h3>Locations</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+    </div>
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <div class="social">
+        <a href=""><i class="bx bx1-facebook"></i></a>
+        <a href=""><i class="bx bx1-twitter"></i></a>
+        <a href=""><i class="bx bx1-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Copyright-->
+<div class="copyright">
+  <p>&#169; Hydra-TVH</p>
+</div>

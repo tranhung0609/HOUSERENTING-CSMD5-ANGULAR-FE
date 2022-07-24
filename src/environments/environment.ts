@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl : 'http://localhost:8003/login',
+  apiUrl : 'http://localhost:8080',
   firebaseConfig : {
     apiKey : "AIzaSyBrxQ0VM1pusl2Ey_J07gY8py0ch5_WhUs" ,
     authDomain : "hydra-tvh.firebaseapp.com" ,
