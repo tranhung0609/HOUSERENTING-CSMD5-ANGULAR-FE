@@ -65,11 +65,11 @@
   <!--    <p>Lorem ípum</p>-->
   <!--  </div>-->
   <form action="" >
-    <div class="properties-container container" *ngFor="let item of homes">
+    <div class="properties-container container">
       <!--    Box1-->
 
-      <div class="box">
-        <img src="" alt="">
+      <div class="box" *ngFor="let item of homes">
+        <img src="{{item.imagee}}" style="width: 100%">
         <h3>Giá: {{item.price}}/bạt </h3>
         <div class="content">
           <div class="text">
@@ -77,8 +77,8 @@
             <p>{{item.address}}</p>
           </div>
           <div class="icon">
-            <i class="bx bx-bed"><span>Phòng ngủ: {{item.bedroom}}</span></i>|
-            <i class="bx bx-bath"><span>Phong tắm: {{item.bathroom}}</span></i>
+            <i class="bx bx-bed"><span> {{item.bedroom}}</span></i>
+            <i class="bx bx-bath"><span> {{item.bathroom}}</span></i>
           </div>
         </div>
       </div>

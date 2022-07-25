@@ -6,14 +6,14 @@ export const environment = {
   production: false,
   apiUrl : 'http://localhost:8080',
   firebaseConfig : {
-    apiKey : "AIzaSyBrxQ0VM1pusl2Ey_J07gY8py0ch5_WhUs" ,
-    authDomain : "hydra-tvh.firebaseapp.com" ,
-    databaseURL : "https://hydra-tvh-default-rtdb.firebaseio.com" ,
-    projectId : "hydra-tvh" ,
-    storageBucket : "hydra-tvh.appspot.com" ,
-    messagingSenderId : "249986935010" ,
-    appId : "1:249986935010:web:ddf3c0806dd4d8b51a56bb" ,
-    measurementId : "G-HCDEHGS1ZS"
+    apiKey: "AIzaSyB3a2cyk0O9jJOJ7gpWqio0SvpXng-Rkw4",
+    authDomain: "demouploadfilebaseangular.firebaseapp.com",
+    dataBaseURL: 'https://demouploadfilebaseangular-default-rtdb.firebaseio.com',
+    projectId: "demouploadfilebaseangular",
+    storageBucket: "demouploadfilebaseangular.appspot.com",
+    messagingSenderId: "818642460029",
+    appId: "1:818642460029:web:49f5f0036fa6c41ae88014",
+    measurementId: "G-JTYYNFTV11"
   }
 };
 
