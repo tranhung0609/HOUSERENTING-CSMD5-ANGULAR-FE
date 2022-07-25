@@ -29,6 +29,9 @@ const routes: Routes = [
     component: UserPageComponent,
     children: [
       {
+
+      },
+      {
         path: 'add-house',
         component: AddHouseComponent
       }

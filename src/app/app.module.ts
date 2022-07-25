@@ -16,6 +16,7 @@ import { NavbarComponent } from './components/blocks/navbar/navbar.component';
 import { UserPageComponent } from './components/pages/users/user-page/user-page.component';
 import { ListHomeComponent } from './components/pages/list-home/list-home.component';
 import {AddHouseComponent} from "./components/pages/users/add-house/add-house.component";
+import {UserHousesComponent} from "./components/pages/users/user-houses/user-houses.component";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {AddHouseComponent} from "./components/pages/users/add-house/add-house.co
     NavbarComponent,
     UserPageComponent,
     ListHomeComponent,
-    AddHouseComponent
+    AddHouseComponent,
+    UserHousesComponent
   ],
   imports: [
     BrowserModule,
