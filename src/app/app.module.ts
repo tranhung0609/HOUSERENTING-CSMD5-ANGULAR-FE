@@ -14,6 +14,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { NavbarComponent } from './components/blocks/navbar/navbar.component';
 import { UserPageComponent } from './components/pages/user-page/user-page.component';
+import { HouseListComponent } from './components/pages/house/house-list/house-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UserPageComponent } from './components/pages/user-page/user-page.compon
     RegisterComponent,
     HomepageComponent,
     NavbarComponent,
-    UserPageComponent
+    UserPageComponent,
+    HouseListComponent
   ],
   imports: [
     BrowserModule,
