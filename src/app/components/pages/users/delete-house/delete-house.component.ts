@@ -69,6 +69,7 @@ export class DeleteHouseComponent implements OnInit {
   delete(id: number){
     this.houseService.delete(id).subscribe(() =>{
       alert('Delete Successfully');
+      // @ts-ignore
       this.router.navigate(['/user'])
     }, error => {
       console.log(error);
