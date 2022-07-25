@@ -1,53 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SignUp</title>
-
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-</head>
-<body>
-<!--Navbar-->
-<header>
-  <div class="nav container">
-    <!--    logo-->
-
-    <!--    Đường link dẫn tới trang home-->
-    <a href="index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
-    <!--    Login Button-->
-    <!--    Gắn đường link để đến trang login-->
-    <a href="" class="btn">Log In</a>
-  </div>
-</header>
-<!--Sign up-->
 <div class="login container">
   <div class="login-container">
     <h2>Welcome, Let's get started</h2>
     <p>Already have account <a href="">Log In</a></p>
     <!--    LoginForm-->
-    <form action="">
+    <form action="" [formGroup]="signUpForm" (ngSubmit)="signUp()">
       <span>Full Name</span>
-      <input type="text" name="" id="" placeholder="Your Name" required>
-      <span>Enter your email address</span>
-      <input type="email" name="" id="" placeholder="yourgmail@gmail.com" required>
+      <input type="text" name="" id="name" placeholder="Your Name" formControlName="username" required>
       <span>Phone</span>
-      <input type="tel" name="" id="" placeholder="Enter your number" required>
+      <input type="tel" name="" id="phone" placeholder="Enter your number" formControlName="phone" required>
       <span>Enter your password</span>
-      <input type="password" name="" id="" placeholder="At least 8" required>
+      <input type="password" name="" id="password" placeholder="Password" formControlName="password" required>
+      <span>ConfirmPassword</span>
+      <input type="password" name="" id="confirmPassword" placeholder="At least 8" formControlName="confirmPassword" required>
       <input type="submit" value="Sign Up" class="buttom">
-      <a href="">Already have account</a>
+      <a routerLink="/login">Already have account</a>
     </form>
     <!--    Gắn đường link để chuyển đến trang LogIn-->
-    <a href="" class="btn">Log In</a>
+    <a routerLink="/login" class="btn">Log In</a>
   </div>
 
   <!--  log in image-->
   <div class="login-image">
-    <img src="image/123547528_196604325311788_5603777918053312513_n.jpg" alt="">
+    <img src="../../../assets/image/123547528_196604325311788_5603777918053312513_n.jpg" alt="">
   </div>
 </div>
 <!--Footer-->
@@ -82,5 +56,3 @@
 <div class="copyright">
   <p>&#169; Hydra-TVH</p>
 </div>
-</body>
-</html>

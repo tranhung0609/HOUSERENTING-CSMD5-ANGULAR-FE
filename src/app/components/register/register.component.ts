@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import { User } from 'src/app/models/user';
-import {UserService} from "../../services/user.service";
+import {environment} from "../../../environments/environment";
+import Swal from "sweetalert2";
+
+const API_URL = environment.apiUrl;
 
 @Component({
   selector: 'app-register',
@@ -10,42 +13,47 @@ import {UserService} from "../../services/user.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]),
-    confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]),
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-  });
-  constructor(private userService: UserService,
-              private router: Router) { }
+  public signUpForm !: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private http: HttpClient,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
-  }
-  register() {
-    const user = this.setNewUser();
-    this.userService.register(user).subscribe(() => {
-      console.log('Đăng ký thành công');
-      this.registerForm.reset();
-      this.router.navigate(['/login']);
-    }, err => {
-      console.log(err);
-    });
-    console.log(user);
+    this.signUpForm = this.formBuilder.group({
+      username: [''],
+      phone: [''],
+      password: [''],
+      confirmPassword: [''],
+
+    })
   }
 
-  private setNewUser() {
-    const user: User = {
-      username: this.registerForm.value.username,
-      password: this.registerForm.value.password,
-      confirmPassword: this.registerForm.value.confirmPassword,
-      firstName: this.registerForm.value.firstName,
-      lastName: this.registerForm.value.lastName,
-      gender: this.registerForm.value.gender,
-      email: this.registerForm.value.email,
-      phoneNumber: "1"
-    };
-    return user;
+  signUp() {
+    this.http.post<any>(API_URL + '/register', this.signUpForm.value).subscribe(res => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: '\n' +
+          '\n' +
+          'Registration failed ! Please double check the information',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.signUpForm.reset();
+      this.router.navigate(['login'])
+    }, error => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: '\n' +
+          '\n' +
+          'Registration failed ! Please double check the information',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    })
   }
 
 }

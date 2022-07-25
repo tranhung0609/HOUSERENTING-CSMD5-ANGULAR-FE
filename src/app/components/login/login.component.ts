@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../../services/authentication.service";
 import {first} from "rxjs";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -53,10 +54,25 @@ export class LoginComponent implements OnInit {
           } else {
             this.router.navigate([this.returnUrl]);
           }
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '\n' +
+              'Logged in successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
 
         },
         error => {
-          alert("Tài khoản của bạn đã bị khoá hoặc sai mật khẩu!");
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: '\n' +
+              'Login failed ! Please check again.',
+            showConfirmButton: false,
+            timer: 1500
+          })
           this.loading = false;
         });
   }
