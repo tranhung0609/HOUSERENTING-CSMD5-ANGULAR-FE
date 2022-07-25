@@ -20,7 +20,7 @@ const routes: Routes = [
     component: HomepageComponent
   },
   {
-    path: 'homepage',
+    path: 'list-home',
     component: ListHomeComponent
   },
   {

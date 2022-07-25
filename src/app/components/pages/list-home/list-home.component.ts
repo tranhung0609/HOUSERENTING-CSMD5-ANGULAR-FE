@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HouseService} from "../../../services/house.service";
 
 @Component({
   selector: 'app-list-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListHomeComponent implements OnInit {
 
-  constructor() { }
+  homes: any;
+
+  constructor(private houseService: HouseService) { }
 
   ngOnInit(): void {
+    this.houseService.findAllPublicHome().subscribe((houses) => {
+      console.log(houses)
+      // @ts-ignore
+      this.homes = houses.content;
+    })
   }
 
 }

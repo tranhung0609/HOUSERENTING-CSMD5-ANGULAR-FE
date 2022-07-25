@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // @ts-ignore
-    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/homepage';
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/list-home';
     this.adminUrl = '/admin'
   }
 
