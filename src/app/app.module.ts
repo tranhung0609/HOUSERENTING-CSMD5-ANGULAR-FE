@@ -17,6 +17,11 @@ import { UserPageComponent } from './components/pages/users/user-page/user-page.
 import { ListHomeComponent } from './components/pages/list-home/list-home.component';
 
 
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,4 +44,4 @@ import { ListHomeComponent } from './components/pages/list-home/list-home.compon
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
