@@ -13,7 +13,9 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import { HomepageComponent } from './components/pages/homepage/homepage.component';
 import { NavbarComponent } from './components/blocks/navbar/navbar.component';
-import { UserPageComponent } from './components/pages/user-page/user-page.component';
+import { UserPageComponent } from './components/pages/users/user-page/user-page.component';
+import { ListHomeComponent } from './components/pages/list-home/list-home.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { UserPageComponent } from './components/pages/user-page/user-page.compon
     RegisterComponent,
     HomepageComponent,
     NavbarComponent,
-    UserPageComponent
+    UserPageComponent,
+    ListHomeComponent,
   ],
   imports: [
     BrowserModule,

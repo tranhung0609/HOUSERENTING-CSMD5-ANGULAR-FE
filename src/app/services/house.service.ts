@@ -12,7 +12,7 @@ export class HouseService {
 
   constructor(private http: HttpClient) { }
 
-  findAllPublicHome(): Observable<House>{
-    return this.http.get(API_URL + '/find-all-public-home')
-  }
+  // findAllPublicHome(): Observable<House>{
+  //   return this.http.get(API_URL + '/find-all-public-home')
+  // }
 }
