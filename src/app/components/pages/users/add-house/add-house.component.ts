@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
-import {Category} from "../../../models/category";
 import firebase from "firebase/compat";
 import User = firebase.User;
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {CategoryService} from "../../../services/category.service";
-import {HouseService} from "../../../services/house.service";
-import {UserService} from "../../../services/user.service";
-import {House} from "../../../models/house";
+import {HouseService} from "../../../../services/house.service";
+import {UserService} from "../../../../services/user.service";
+import {House} from "../../../../models/house";
 
 @Component({
   selector: 'app-add-house',
@@ -16,7 +14,7 @@ import {House} from "../../../models/house";
   styleUrls: ['./add-house.component.css']
 })
 export class AddHouseComponent implements OnInit {
-  house:House[]=[];
+  house: House[] = [];
   form = new FormGroup({
     name: new FormGroup(''),
     category: new FormGroup(''),
@@ -29,38 +27,45 @@ export class AddHouseComponent implements OnInit {
     status: new FormGroup('')
   })
   obj: any;
+  id: any;
+
   // listHouse: any[] = [];
 
   constructor(private httpClient: HttpClient,
               private router: Router,
               private houseService: HouseService,
-              private userService: UserService) { }
+              private userService: UserService) {
+  }
 
   ngOnInit(): void {
 
-    this.houseService.findAllHouseByUser().subscribe((data)=>{
+    this.houseService.findAllHouseByUser(this.id).subscribe((data) => {
       // @ts-ignore
       this.house = data.content;
     });
   }
 
-  add(){
+  add() {
     console.log(this.form.value)
-     const house = {
-      name : this.form.value.name,
-      address : this.form.value.address,
-      bedroom : this.form.value.bedroom,
-      bathroom : this.form.value.bathroom,
-      description : this.form.value.description,
-      price : this.form.value.price,
+    this.obj = {
+      name: this.form.value.name,
+      address: this.form.value.address,
+      bedroom: this.form.value.bedroom,
+      bathroom: this.form.value.bathroom,
+      description: this.form.value.description,
+      price: this.form.value.price,
       status: this.form.value.status,
-      user:{
+      user: {
         id: localStorage.getItem('ID')
       }
     }
     // @ts-ignore
-    this.houseService.save(house).subscribe(() => {
-      this.router.navigate(['/users'])
+    this.houseService.save(this.obj).subscribe((data) => {
+      alert("add successfully");
+      this.obj = data;
+      // @ts-ignore
+      $('#exampleModal').modal('hide');
+      this.router.navigate(['/user'])
     })
   }
 

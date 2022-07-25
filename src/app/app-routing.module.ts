@@ -5,6 +5,7 @@ import {RegisterComponent} from "./components/pages/register/register.component"
 import {HomepageComponent} from "./components/pages/homepage/homepage.component";
 import {UserPageComponent} from "./components/pages/users/user-page/user-page.component";
 import {ListHomeComponent} from "./components/pages/list-home/list-home.component";
+import {AddHouseComponent} from "./components/pages/users/add-house/add-house.component";
 
 const routes: Routes = [
   {
@@ -25,7 +26,13 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UserPageComponent
+    component: UserPageComponent,
+    children: [
+      {
+        path: 'add-house',
+        component: AddHouseComponent
+      }
+    ]
   },
 ];
 

@@ -15,6 +15,7 @@ import { HomepageComponent } from './components/pages/homepage/homepage.componen
 import { NavbarComponent } from './components/blocks/navbar/navbar.component';
 import { UserPageComponent } from './components/pages/users/user-page/user-page.component';
 import { ListHomeComponent } from './components/pages/list-home/list-home.component';
+import {AddHouseComponent} from "./components/pages/users/add-house/add-house.component";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ListHomeComponent } from './components/pages/list-home/list-home.compon
     NavbarComponent,
     UserPageComponent,
     ListHomeComponent,
+    AddHouseComponent
   ],
   imports: [
     BrowserModule,
