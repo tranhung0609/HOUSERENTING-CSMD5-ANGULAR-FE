@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // @ts-ignore
-    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/';
+    this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl || '/homepage';
     this.adminUrl = '/admin'
   }
 
@@ -50,19 +50,26 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('USERNAME', data.username);
           // @ts-ignore
           if (data.roles[0].authority == "ROLE_ADMIN") {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: '\n' +
+                'Login failed ! Please check again.',
+              showConfirmButton: false,
+              timer: 1500
+            })
             this.router.navigate([this.adminUrl])
           } else {
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: '\n' +
+                'Login failed ! Please check again.',
+              showConfirmButton: false,
+              timer: 1500
+            })
             this.router.navigate([this.returnUrl]);
           }
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: '\n' +
-              'Logged in successfully',
-            showConfirmButton: false,
-            timer: 1500
-          })
-
         },
         error => {
           Swal.fire({
@@ -76,4 +83,6 @@ export class LoginComponent implements OnInit {
           this.loading = false;
         });
   }
+
+
 }

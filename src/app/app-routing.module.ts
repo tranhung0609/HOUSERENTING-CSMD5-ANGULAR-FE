@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {LoginComponent} from "./components/pages/login/login.component";
 import {RegisterComponent} from "./components/pages/register/register.component";
 import {HomepageComponent} from "./components/pages/homepage/homepage.component";
-import {UserPageComponent} from "./components/pages/user-page/user-page.component";
+import {UserPageComponent} from "./components/pages/users/user-page/user-page.component";
+import {ListHomeComponent} from "./components/pages/list-home/list-home.component";
 
 const routes: Routes = [
   {
@@ -19,9 +20,13 @@ const routes: Routes = [
     component: HomepageComponent
   },
   {
-    path: 'users',
+    path: 'homepage',
+    component: ListHomeComponent
+  },
+  {
+    path: 'user',
     component: UserPageComponent
-  }
+  },
 ];
 
 @NgModule({

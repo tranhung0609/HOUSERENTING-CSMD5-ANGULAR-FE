@@ -1,7 +1,7 @@
 <header *ngIf="!isLogin">
   <div class="nav container">
     <!--    logo-->
-    <a href="../../../../index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
+    <a  class="logo"><i class="bx bx-home"></i>Home Rental Properties</a>
 
     <input type="checkbox" name="" id="menu">
     <label for="menu"><i class="bx bx-menu" id="menu-icon"></i></label>
@@ -12,23 +12,24 @@
       <li><a href=""></a>Properties</li>
     </ul>
     <!--    login button-->
-    <a href="" class="btn">Log In</a>
+    <a routerLink="/login" class="btn">Log In</a>
   </div>
 </header>
 <header *ngIf="isLogin">
   <div class="nav container">
     <!--    logo-->
-    <a href="../../../../index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
+    <a routerLink="/homepage" class="logo"><i class="bx bx-home"></i>Home Rental Properties</a>
 
     <input type="checkbox" name="" id="menu">
     <label for="menu"><i class="bx bx-menu" id="menu-icon"></i></label>
     <ul class="navbar">
-      <li><a href=""></a>Home</li>
-      <li><a href=""></a>About</li>
-      <li><a href=""></a>Sale</li>
-      <li><a href=""></a>Properties</li>
+      <span>
+      <li routerLink="info/{{userId}}" style="margin-left: 415px; font-size: 20px;font-family: emoji">{{USERNAME}}</li>
+        </span>
+      <i routerLink="/user" class='bx bx-user-circle bx-tada' style="font-size: 25px; color: cornflowerblue"></i>
     </ul>
     <!--    login button-->
-    <a href="" class="btn" (click)="logOut()">Log Out</a>
+    <a  class="btn" (click)="logOut()">Log Out</a>
+
   </div>
 </header>

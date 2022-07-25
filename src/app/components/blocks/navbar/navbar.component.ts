@@ -8,6 +8,8 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
   isLogin = false;
+  USERNAME = "";
+  userId = "";
 
   constructor(private router: Router) {
   }
@@ -15,6 +17,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLogin = localStorage.getItem('USERNAME') == null ? false : true;
+    // @ts-ignore
+    this.USERNAME = localStorage.getItem('USERNAME');
+    // @ts-ignore
+    this.userId = localStorage.getItem('id');
   }
 
   logOut(){
