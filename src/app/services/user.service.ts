@@ -3,13 +3,16 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {User} from "../models/user";
 import {Observable} from "rxjs";
+import {House} from "../models/house";
 const API_URL = environment.apiUrl;
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
   register(user: User): Observable<User> {
     return this.http.post<User>(API_URL + '/register', user);
   }
@@ -47,6 +50,10 @@ export class UserService {
   }
 
 
+  delete(id: number): Observable<House> {
+    return this.http.delete<House>(API_URL + `/${id}`);
 
+
+  }
 
 }

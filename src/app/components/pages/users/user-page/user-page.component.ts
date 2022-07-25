@@ -15,12 +15,13 @@ export class UserPageComponent implements OnInit {
 
   house: House[] = [];
   form = new FormGroup({
-    name: new FormControl(''),
+
     category: new FormControl(''),
     address: new FormControl(''),
     bedroom: new FormControl(''),
     bathroom: new FormControl(''),
     description: new FormControl(''),
+    name: new FormControl(''),
     price: new FormControl(''),
     user: new FormControl(''),
     status: new FormControl('')
@@ -47,11 +48,12 @@ export class UserPageComponent implements OnInit {
   add() {
     console.log(this.form.value)
     this.obj = {
-      name: this.form.value.name,
+
       address: this.form.value.address,
       bedroom: this.form.value.bedroom,
       bathroom: this.form.value.bathroom,
       description: this.form.value.description,
+      name: this.form.value.name,
       price: this.form.value.price,
       status: this.form.value.status,
       user: {
@@ -60,7 +62,7 @@ export class UserPageComponent implements OnInit {
     }
     // @ts-ignore
     this.houseService.save(this.obj).subscribe((data) => {
-      alert("add successfully");
+      alert("Add Successfully");
       this.obj = data;
       // @ts-ignore
       $('#exampleModal').modal('hide');

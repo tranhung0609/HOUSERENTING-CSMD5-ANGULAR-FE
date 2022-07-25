@@ -41,11 +41,11 @@
 <!--</section>-->
 <!--Properties-->
 <section class="properties container" id="properties">
-    <div class="heading">
-      <span><a href="javascript:" data-toggle="modal" data-target="#exampleModal">Add House</a></span>
-      <h2>My House</h2>
-<!--      <p>Lorem ípum</p>-->
-    </div>
+  <div class="heading">
+    <span><a href="javascript:" data-toggle="modal" data-target="#exampleModal">Add House</a></span>
+    <h2>My House</h2>
+    <!--      <p>Lorem ípum</p>-->
+  </div>
   <form action="">
     <div class="properties-container container">
       <!--    Box1-->
@@ -151,7 +151,7 @@
   <p>&#169; Home Rental Properties</p>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -161,7 +161,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="form" (ngSubmit)="add()">
+        <form [formGroup]="form" (ngSubmit)="delete(id)">
 
           <label>Address</label>
           <input type="text" formControlName="address" class="form-control">
@@ -187,7 +187,7 @@
           <!--            </option>-->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Delete</button>
           </div>
         </form>
       </div>

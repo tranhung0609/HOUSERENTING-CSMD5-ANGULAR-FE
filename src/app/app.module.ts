@@ -16,7 +16,7 @@ import { NavbarComponent } from './components/blocks/navbar/navbar.component';
 import { UserPageComponent } from './components/pages/users/user-page/user-page.component';
 import { ListHomeComponent } from './components/pages/list-home/list-home.component';
 import {AddHouseComponent} from "./components/pages/users/add-house/add-house.component";
-import {UserHousesComponent} from "./components/pages/users/user-houses/user-houses.component";
+import {DeleteHouseComponent} from "./components/pages/users/delete-house/delete-house.component";
 
 
 @NgModule({
@@ -29,7 +29,7 @@ import {UserHousesComponent} from "./components/pages/users/user-houses/user-hou
     UserPageComponent,
     ListHomeComponent,
     AddHouseComponent,
-    UserHousesComponent
+    DeleteHouseComponent
   ],
   imports: [
     BrowserModule,
@@ -43,4 +43,7 @@ import {UserHousesComponent} from "./components/pages/users/user-houses/user-hou
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {
+}
