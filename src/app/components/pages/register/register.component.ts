@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../../environments/environment";
 import Swal from "sweetalert2";
 
 const API_URL = environment.apiUrl;
