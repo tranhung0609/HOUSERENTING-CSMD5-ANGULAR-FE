@@ -7,7 +7,8 @@ export interface House {
   bedroom: string,
   bathroom: string,
   description: string,
-  price: string
-  status: string
-  user: User
+  price: string,
+  status: string,
+  user: User,
+  imagee: string
 }
