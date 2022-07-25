@@ -1,71 +1,86 @@
-<!--<link rel="stylesheet" href="../assets/vendor/fontawesome-free/css/all.min.css">-->
-<!--<link rel="stylesheet" href="../assets/css/sb-admin-2.min.css">-->
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp</title>
 
-  <div class="card o-hidden border-0 shadow-lg my-5">
-    <div class="card-body p-0">
-      <!-- Nested Row within Card Body -->
-      <div class="row">
-        <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-        <div class="col-lg-7">
-          <div class="p-5">
-            <div class="text-center">
-              <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-            </div>
-            <form class="user" [formGroup]="registerForm" (ngSubmit)="register()">
-              <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                         placeholder="Username" formControlName="username">
-                </div>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control form-control-user" id="exampleLastName"
-                         placeholder="Name" formControlName="name">
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                       placeholder="Email Address" formControlName="email">
-              </div>
-              <div class="form-group row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                  <input type="password" class="form-control form-control-user"
-                         id="exampleInputPassword" placeholder="Password" formControlName="password">
-                </div>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control form-control-user"
-                         id="exampleRepeatPassword" placeholder="Repeat Password" formControlName="confirmPassword">
-                </div>
-              </div>
-              <input type="submit" class="btn btn-primary btn-user btn-block" value="Register">
-              <hr>
-              <a href="index.html" class="btn btn-google btn-user btn-block">
-                <i class="fab fa-google fa-fw"></i> Register with Google
-              </a>
-              <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-              </a>
-            </form>
-            <hr>
-            <div class="text-center">
-              <a class="small" href="forgot-password.html">Forgot Password?</a>
-            </div>
-            <div class="text-center">
-              <a class="small" href="login.html">Already have an account? Login!</a>
-            </div>
-          </div>
-        </div>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+</head>
+<body>
+<!--Navbar-->
+<header>
+  <div class="nav container">
+    <!--    logo-->
+
+    <!--    Đường link dẫn tới trang home-->
+    <a href="index.html" class="logo"><i class="bx bx-home"></i>Hydra</a>
+    <!--    Login Button-->
+    <!--    Gắn đường link để đến trang login-->
+    <a href="" class="btn">Log In</a>
+  </div>
+</header>
+<!--Sign up-->
+<div class="login container">
+  <div class="login-container">
+    <h2>Welcome, Let's get started</h2>
+    <p>Already have account <a href="">Log In</a></p>
+    <!--    LoginForm-->
+    <form action="">
+      <span>Full Name</span>
+      <input type="text" name="" id="" placeholder="Your Name" required>
+      <span>Enter your email address</span>
+      <input type="email" name="" id="" placeholder="yourgmail@gmail.com" required>
+      <span>Phone</span>
+      <input type="tel" name="" id="" placeholder="Enter your number" required>
+      <span>Enter your password</span>
+      <input type="password" name="" id="" placeholder="At least 8" required>
+      <input type="submit" value="Sign Up" class="buttom">
+      <a href="">Already have account</a>
+    </form>
+    <!--    Gắn đường link để chuyển đến trang LogIn-->
+    <a href="" class="btn">Log In</a>
+  </div>
+
+  <!--  log in image-->
+  <div class="login-image">
+    <img src="image/123547528_196604325311788_5603777918053312513_n.jpg" alt="">
+  </div>
+</div>
+<!--Footer-->
+<section class="footer">
+  <div class="footer-container container">
+    <h2>R.State</h2>
+    <div class="footer-box">
+      <h3>Quick Links</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+    </div>
+    <div class="footer-box">
+      <h3>Locations</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+    </div>
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <a href="">Agency</a>
+      <a href="">Agency</a>
+      <div class="social">
+        <a href=""><i class="bx bx1-facebook"></i></a>
+        <a href=""><i class="bx bx1-twitter"></i></a>
+        <a href=""><i class="bx bx1-instagram"></i></a>
       </div>
     </div>
   </div>
-
+</section>
+<!--Copyright-->
+<div class="copyright">
+  <p>&#169; Hydra-TVH</p>
 </div>
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<script src="../assets/js/sb-admin-2.min.js"></script>
-
-<script src="../assets/vendor/chart.js/Chart.min.js"></script>
-<script src="../assets/js/demo/chart-area-demo.js"></script>
-<script src="../assets/js/demo/chart-pie-demo.js"></script>
+</body>
+</html>
